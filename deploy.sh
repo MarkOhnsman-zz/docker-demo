@@ -1,7 +1,7 @@
 dotnet publish -c Release
-docker build -t dockerdemo ./
-docker tag dockerdemo registry.heroku.com/docker-demo-bcw/web
-docker push registry.heroku.com/docker-demo-bcw/web
-heroku container:release web -a docker-demo-bcw
+docker build -t TAG_NAME ./bin/Release/netcoreapp5.0/publish
+docker tag TAG_NAME registry.heroku.com/HEROKU_APP_NAME/web
+docker push registry.heroku.com/HEROKU_APP_NAME/web
+heroku container:release web -a HEROKU_APP_NAME
 echo press any key
 read end
